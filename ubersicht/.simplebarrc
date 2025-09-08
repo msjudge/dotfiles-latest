@@ -32,7 +32,7 @@
   },
   "themes": {
     "lightTheme": "RosePineDawn",
-    "darkTheme": "RosePineMoon",
+    "darkTheme": "TokyoNight",
     "colorMain": "",
     "colorMainAlt": "",
     "colorMinor": "",
@@ -62,7 +62,7 @@
     "displayOnlyCurrentStack": false
   },
   "spacesDisplay": {
-    "showOnDisplay": "0",
+    "showOnDisplay": "",
     "exclusions": "",
     "titleExclusions": "",
     "spacesExclusions": "",
