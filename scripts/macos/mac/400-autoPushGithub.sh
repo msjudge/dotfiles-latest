@@ -47,10 +47,30 @@ log_message() {
 # NOTE: Don't keep the repos below in google drive, iCloud orsimilar, as you'll be
 # receiving some weird notifications about
 # fatal: mmap failed: Resource deadlock avoided
-REPO_LIST=(
-  "$HOME/github/skitty"
-  "$HOME/github/obsidian_main"
-)
+#
+# DYNAMIC REPO DETECTION: Only process directories that exist AND contain .git
+# This prevents errors when repos are missing or not initialized
+REPO_LIST=()
+BASE_DIR="$HOME/github"
+
+# Auto-detect all git repositories in the github directory
+if [ -d "$BASE_DIR" ]; then
+  while IFS= read -r -d '' repo; do
+    REPO_LIST+=("$repo")
+  done < <(find "$BASE_DIR" -maxdepth 2 -type d -name ".git" -print0 | while IFS= read -r -d '' gitdir; do
+    dirname "$gitdir" | tr '\n' '\0'
+  done)
+fi
+
+# If you want to explicitly exclude certain repos, uncomment and modify:
+# EXCLUDE_REPOS=("$HOME/github/some-repo-to-exclude")
+# REPO_LIST=(${REPO_LIST[@]/$EXCLUDE_REPOS})
+
+# Log detected repos for debugging
+log_message "INFO" "SYSTEM" "Detected ${#REPO_LIST[@]} git repositories to process"
+for repo in "${REPO_LIST[@]}"; do
+  log_message "DEBUG" "SYSTEM" "Will process: $repo"
+done
 
 # Define the push interval in seconds
 # Make sure this matches the frequency of the launch agent

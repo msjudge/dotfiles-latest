@@ -1,35 +1,53 @@
 {
+  "$schema": "https://raw.githubusercontent.com/Jean-Tinland/simple-bar/refs/heads/master/lib/schemas/config.json",
   "global": {
     "theme": "auto",
+    "compactMode": true,
     "floatingBar": true,
     "noBarBg": true,
     "noColorInData": false,
     "bottomBar": false,
     "sideDecoration": true,
     "inlineSpacesOptions": true,
-    "disableNotifications": false,
-    "enableMissives": false,
-    "compactMode": true,
-    "widgetMaxWidth": "100px",
+    "disableAnimations": false,
     "spacesBackgroundColorAsForeground": false,
     "widgetsBackgroundColorAsForeground": true,
+    "widgetMaxWidth": "100px",
+    "slidingAnimationPace": 4,
     "font": "JetBrains Mono, Monaco, Menlo, monospace",
     "fontSize": "11px",
-    "yabaiPath": "/opt/homebrew/bin/yabai",
+    "yabaiPath": "/usr/local/bin/yabai",
     "aerospacePath": "/opt/homebrew/bin/aerospace",
+    "flashspacePath": "$(which flashspace)",
     "windowManager": "yabai",
     "shell": "sh",
     "terminal": "Terminal",
-    "slidingAnimationPace": 4,
-    "externalConfigFile": true,
+    "disableNotifications": false,
+    "enableMissives": false,
     "enableServer": false,
     "serverSocketPort": 7777,
     "yabaiServerRefresh": false,
-    "aerospaceServerRefresh": false
+    "aerospaceServerRefresh": false,
+    "flashspaceServerRefresh": false
   },
   "themes": {
     "lightTheme": "RosePineDawn",
-    "darkTheme": "MaterialOcean"
+    "darkTheme": "MaterialOcean",
+    "colorMain": "",
+    "colorMainAlt": "",
+    "colorMinor": "",
+    "colorAccent": "",
+    "colorRed": "",
+    "colorGreen": "",
+    "colorYellow": "",
+    "colorOrange": "",
+    "colorBlue": "",
+    "colorMagenta": "",
+    "colorCyan": "",
+    "colorBlack": "",
+    "colorWhite": "",
+    "colorForeground": "",
+    "colorBackground": ""
   },
   "process": {
     "showOnDisplay": "",
@@ -55,13 +73,18 @@
     "hideCreateSpaceButton": true,
     "hideEmptySpaces": false,
     "showOptionsOnHover": true,
-    "switchSpacesWithoutYabai": false
+    "switchSpacesWithoutYabai": false,
+    "showOnlyFlashspaceSpaceIndex": false,
+    "hideFlashspaceAppIcons": false,
+    "customAeroSpaceDisplayIndexes": {}
   },
   "widgets": {
     "processWidget": true,
+    "githubWidget": false,
     "weatherWidget": false,
     "netstatsWidget": false,
     "cpuWidget": true,
+    "gpuWidget": false,
     "memoryWidget": false,
     "batteryWidget": true,
     "wifiWidget": true,
@@ -80,9 +103,18 @@
     "mpdWidget": false,
     "browserTrackWidget": false
   },
+  "githubWidgetOptions": {
+    "refreshFrequency": 600000,
+    "showOnDisplay": "",
+    "showIcon": true,
+    "hideWhenNoNotification": false,
+    "notificationUrl": "https://github.com/notifications",
+    "ghBinaryPath": "/opt/homebrew/bin/gh"
+  },
   "weatherWidgetOptions": {
     "refreshFrequency": 1800000,
     "showOnDisplay": "",
+    "showIcon": true,
     "unit": "C",
     "hideLocation": false,
     "hideGradient": false,
@@ -91,28 +123,40 @@
   "netstatsWidgetOptions": {
     "refreshFrequency": 2000,
     "showOnDisplay": "",
+    "showIcon": true,
     "displayAsGraph": false
   },
   "cpuWidgetOptions": {
     "refreshFrequency": 2000,
     "showOnDisplay": "",
+    "showIcon": true,
     "displayAsGraph": true,
     "cpuMonitorApp": "Activity Monitor"
+  },
+  "gpuWidgetOptions": {
+    "refreshFrequency": 3000,
+    "showOnDisplay": "",
+    "showIcon": true,
+    "displayAsGraph": false,
+    "gpuMacmonBinaryPath": "/opt/homebrew/bin/macmon"
   },
   "memoryWidgetOptions": {
     "refreshFrequency": 4000,
     "showOnDisplay": "",
+    "showIcon": true,
     "memoryMonitorApp": "Activity Monitor"
   },
   "batteryWidgetOptions": {
     "refreshFrequency": 10000,
     "showOnDisplay": "",
+    "showIcon": true,
     "toggleCaffeinateOnClick": true,
     "caffeinateOption": ""
   },
   "networkWidgetOptions": {
     "refreshFrequency": 20000,
     "showOnDisplay": "",
+    "showIcon": true,
     "networkDevice": "en0",
     "hideWifiIfDisabled": false,
     "toggleWifiOnClick": false,
@@ -121,6 +165,7 @@
   "vpnWidgetOptions": {
     "refreshFrequency": 8000,
     "showOnDisplay": "",
+    "showIcon": true,
     "vpnConnectionName": "",
     "vpnShowConnectionName": false
   },
@@ -132,15 +177,18 @@
   },
   "soundWidgetOptions": {
     "refreshFrequency": 20000,
-    "showOnDisplay": ""
+    "showOnDisplay": "",
+    "showIcon": true
   },
   "micWidgetOptions": {
     "refreshFrequency": "10000",
-    "showOnDisplay": ""
+    "showOnDisplay": "",
+    "showIcon": true
   },
   "dateWidgetOptions": {
     "refreshFrequency": 30000,
     "showOnDisplay": "",
+    "showIcon": true,
     "shortDateFormat": true,
     "locale": "en-UK",
     "calendarApp": ""
@@ -148,17 +196,20 @@
   "timeWidgetOptions": {
     "refreshFrequency": 1000,
     "showOnDisplay": "",
+    "showIcon": true,
     "hour12": false,
     "dayProgress": true,
     "showSeconds": false
   },
   "keyboardWidgetOptions": {
     "refreshFrequency": 20000,
-    "showOnDisplay": ""
+    "showOnDisplay": "",
+    "showIcon": true
   },
   "cryptoWidgetOptions": {
     "refreshFrequency": 300000,
     "showOnDisplay": "",
+    "showIcon": true,
     "denomination": "usd",
     "identifiers": "bitcoin,ethereum,celo",
     "precision": 5
@@ -166,6 +217,7 @@
   "stockWidgetOptions": {
     "refreshFrequency": 900000,
     "showOnDisplay": "",
+    "showIcon": true,
     "yahooFinanceApiKey": "YOUR_API_KEY",
     "symbols": "AAPL,TSLA",
     "showSymbol": true,
@@ -178,22 +230,27 @@
   "spotifyWidgetOptions": {
     "refreshFrequency": 10000,
     "showOnDisplay": "",
-    "showSpecter": true
+    "showIcon": true,
+    "showSpecter": true,
+    "showSpotifyMetadata": true
   },
   "youtubeMusicWidgetOptions": {
     "refreshFrequency": 10000,
     "showOnDisplay": "",
+    "showIcon": true,
     "showSpecter": true,
     "youtubeMusicPort": 26538
   },
   "musicWidgetOptions": {
     "refreshFrequency": 10000,
     "showOnDisplay": "",
+    "showIcon": true,
     "showSpecter": true
   },
   "mpdWidgetOptions": {
     "refreshFrequency": 10000,
     "showOnDisplay": "",
+    "showIcon": true,
     "showSpecter": true,
     "mpdBinaryPath": "/opt/homebrew/bin/mpc",
     "mpdPort": "6600",
@@ -203,6 +260,7 @@
   "browserTrackWidgetOptions": {
     "refreshFrequency": 10000,
     "showOnDisplay": "",
+    "showIcon": true,
     "showSpecter": true
   },
   "userWidgets": {
