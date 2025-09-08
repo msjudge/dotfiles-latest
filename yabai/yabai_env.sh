@@ -33,7 +33,7 @@ apps_scratchpad="(Udemy|WezTerm)"
 
 # I had to move them away from normal, because all these apps would stay on top
 # of other apps
-# apps_mgoff_normal="()"
+apps_mgoff_normal="()"
 
 # This keeps apps always on the top
 apps_mgoff_above="()"

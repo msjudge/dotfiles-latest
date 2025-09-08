@@ -51,8 +51,8 @@ yabai -m config external_bar all:28:0
 # paddings
 if command -v sketchybar &>/dev/null; then
   # Check the display size (e.g., grab the resolution here)
-  display_resolution=$(system_profiler SPDisplaysDataType | grep Resolut    yabai -m config top_padding 0
-h my macbook pro, the * are used as wildcards
+  display_resolution=$(system_profiler SPDisplaysDataType | grep Resolution)
+  # Resolution for my macbook pro, the * are used as wildcards
   if [[ "$display_resolution" == *"3456 x 2234"* ]]; then
     # Using external_bar for Simple Bar, so top_padding set to 0
     yabai -m config top_padding 0
