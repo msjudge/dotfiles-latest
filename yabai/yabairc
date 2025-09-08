@@ -42,8 +42,8 @@ yabai -m rule --add app="^${apps_mgoff_above}$" manage=off sub-layer=above
 ###############################################################################
 
 # Simple Bar configuration - using external_bar instead of top_padding
-# This reserves space at the top for Simple Bar (28px by default)
-yabai -m config external_bar all:28:0
+# This reserves space at the top for Simple Bar (36px to prevent overlap)
+yabai -m config external_bar all:36:0
 
 # Sketchybar size changes depending if I'm on my laptop or mac mini, solving it
 # this way, there may be a better way but this was the easiest to solve for now
