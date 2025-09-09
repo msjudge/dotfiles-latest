@@ -59,7 +59,7 @@
     "expandAllProcesses": true,
     "displaySkhdMode": false,
     "displayStackIndex": true,
-    "displayOnlyCurrentStack": false
+    "displayOnlyCurrentStack": true
   },
   "spacesDisplay": {
     "showOnDisplay": "",
