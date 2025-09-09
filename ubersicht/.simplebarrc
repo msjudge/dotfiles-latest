@@ -272,7 +272,22 @@
     "showSpecter": true
   },
   "userWidgets": {
-    "userWidgetsList": {}
+    "userWidgetsList": {
+      "motorcycle": {
+        "title": "System Settings",
+        "icon": "Motorcycle",
+        "backgroundColor": "--foreground",
+        "output": "printf \"\"",
+        "onClickAction": "open -b com.apple.systempreferences",
+        "onRightClickAction": "",
+        "onMiddleClickAction": "",
+        "refreshFrequency": 0,
+        "showOnDisplay": "",
+        "active": true,
+        "noIcon": false,
+        "hideWhenNoOutput": false
+      }
+    }
   },
   "customStyles": {
     "styles": ":root {\n  --main: #0d1116;\n  --main-alt: #314154;\n  --minor: #141b22;\n  --accent: var(--yellow);\n  --red: #f16c75;\n  --green: #37f499;\n  --yellow: #37f499;\n  --orange: #19dfcf;\n  --blue: #1682ef;\n  --magenta: #987afb;\n  --cyan: #04d1f9;\n  --black: #0d1116;\n  --white: #ebfafa;\n}"
