@@ -16,7 +16,7 @@
     "slidingAnimationPace": 4,
     "font": "JetBrains Mono, Monaco, Menlo, monospace",
     "fontSize": "11px",
-    "yabaiPath": "/usr/local/bin/yabai",
+    "yabaiPath": "/opt/homebrew/opt/yabai/bin/yabai",
     "aerospacePath": "/opt/homebrew/bin/aerospace",
     "flashspacePath": "$(which flashspace)",
     "windowManager": "yabai",
@@ -99,7 +99,7 @@
     "spotifyWidget": false,
     "cryptoWidget": false,
     "stockWidget": false,
-    "youtubeMusicWidget": false,
+    "youtubeMusicWidget": true,
     "musicWidget": true,
     "mpdWidget": false,
     "browserTrackWidget": false
