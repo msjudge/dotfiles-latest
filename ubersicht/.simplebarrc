@@ -283,7 +283,7 @@
         "onMiddleClickAction": "",
         "refreshFrequency": 0,
         "showOnDisplay": "",
-        "active": true,
+        "active": false,
         "noIcon": false,
         "hideWhenNoOutput": false
       }
