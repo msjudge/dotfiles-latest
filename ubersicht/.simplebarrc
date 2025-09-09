@@ -84,16 +84,16 @@
     "weatherWidget": false,
     "netstatsWidget": true,
     "cpuWidget": true,
-    "gpuWidget": true,
-    "memoryWidget": false,
+    "gpuWidget": false,
+    "memoryWidget": true,
     "batteryWidget": true,
     "wifiWidget": true,
     "vpnWidget": false,
     "zoomWidget": false,
     "soundWidget": true,
-    "micWidget": true,
+    "micWidget": false,
     "dateWidget": true,
-    "timeWidget": false,
+    "timeWidget": true,
     "keyboardWidget": false,
     "spotifyWidget": false,
     "cryptoWidget": false,
@@ -125,7 +125,7 @@
     "refreshFrequency": 2000,
     "showOnDisplay": "",
     "showIcon": true,
-    "displayAsGraph": false
+    "displayAsGraph": true
   },
   "cpuWidgetOptions": {
     "refreshFrequency": 2000,
@@ -160,8 +160,8 @@
     "showIcon": true,
     "networkDevice": "en0",
     "hideWifiIfDisabled": false,
-    "toggleWifiOnClick": false,
-    "hideNetworkName": true
+    "toggleWifiOnClick": true,
+    "hideNetworkName": false
   },
   "vpnWidgetOptions": {
     "refreshFrequency": 8000,
@@ -198,7 +198,7 @@
     "refreshFrequency": 1000,
     "showOnDisplay": "",
     "showIcon": true,
-    "hour12": false,
+    "hour12": true,
     "dayProgress": true,
     "showSeconds": false
   },

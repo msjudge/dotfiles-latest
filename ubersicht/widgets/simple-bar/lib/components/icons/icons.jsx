@@ -76,6 +76,7 @@ export const Coffee = React.lazy(() => import("./library/coffee.jsx"));
 export const ColorPicker = React.lazy(() =>
   import("./library/color-picker.jsx")
 );
+export const Comet = React.lazy(() => import("./library/comet.jsx"));
 export const Copilot = React.lazy(() => import("./library/copilot.jsx"));
 export const CPU = React.lazy(() => import("./library/cp-u.jsx"));
 export const DataGrip = React.lazy(() => import("./library/data-grip.jsx"));
@@ -133,6 +134,7 @@ export const KeyboardMaestro = React.lazy(() =>
   import("./library/keyboard-maestro.jsx")
 );
 export const Keynote = React.lazy(() => import("./library/keynote.jsx"));
+export const Kiro = React.lazy(() => import("./library/kiro.jsx"));
 export const LeagueOfLegends = React.lazy(() =>
   import("./library/league-of-legends.jsx")
 );
@@ -277,6 +279,7 @@ export const VolumeMuted = React.lazy(() =>
 export const VPN = React.lazy(() => import("./library/vp-n.jsx"));
 export const VPNOff = React.lazy(() => import("./library/vp-n-off.jsx"));
 export const VSCodium = React.lazy(() => import("./library/vs-codium.jsx"));
+export const Warp = React.lazy(() => import("./library/warp.jsx"));
 export const WebStorm = React.lazy(() => import("./library/web-storm.jsx"));
 export const Wechat = React.lazy(() => import("./library/wechat.jsx"));
 export const WhatsApp = React.lazy(() => import("./library/whats-app.jsx"));
