@@ -157,6 +157,10 @@ export const processStyles = /* css */ `
 .process__name {
   margin-top: 2px;
   white-space: nowrap;
-  transition: transform 160ms var(--transition-easing);
+  transition: transform 160ms var(--transition-easing), font-weight 160ms var(--transition-easing);
+}
+.process__window--focused .process__name,
+.process__window--only-current .process__name {
+  font-weight: 700;
 }
 `;

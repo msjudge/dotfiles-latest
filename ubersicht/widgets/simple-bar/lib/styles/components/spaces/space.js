@@ -104,6 +104,9 @@ export const spaceStyles = /* css */ `
   border-radius: 2px;
   outline: none;
 }
+.space--focused .space__label {
+  font-weight: 700;
+}
 .space__label:not(:read-only):focus {
   box-shadow: var(--focus-ring);
 }
