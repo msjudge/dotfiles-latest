@@ -7,7 +7,7 @@
 # yabai -m query --windows | jq -r '.[].app'
 
 # apps_transparent="(Spotify|kitty|Neovide|Google Chrome|Code|WezTerm|Ghostty)"
-apps_transparent="(Neovide|Code)"
+apps_transparent="(Neovide|Code|Perplexity|Google Chrome|Comet|Warp|YouTube|Xcode|Cursor|YouTube Music)"
 
 display_resolution=$(system_profiler SPDisplaysDataType | grep Resolution)
 if [[ $(echo "$display_resolution" | grep -c "Resolution") -ge 2 ]]; then
