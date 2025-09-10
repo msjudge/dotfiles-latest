@@ -70,7 +70,7 @@
     "displayAllSpacesOnAllScreens": true,
     "hideDuplicateAppsInSpaces": false,
     "displayStickyWindowsSeparately": false,
-    "hideCreateSpaceButton": true,
+    "hideCreateSpaceButton": false,
     "hideEmptySpaces": false,
     "showOptionsOnHover": true,
     "switchSpacesWithoutYabai": false,
