@@ -7,7 +7,7 @@
     "noBarBg": true,
     "noColorInData": false,
     "bottomBar": false,
-    "sideDecoration": true,
+    "sideDecoration": false,
     "inlineSpacesOptions": true,
     "disableAnimations": false,
     "spacesBackgroundColorAsForeground": false,
@@ -52,13 +52,13 @@
   "process": {
     "showOnDisplay": "",
     "displayOnlyCurrent": true,
-    "centered": true,
-    "showCurrentSpaceMode": false,
+    "centered": false,
+    "showCurrentSpaceMode": true,
     "hideWindowTitle": true,
     "displayOnlyIcon": false,
     "expandAllProcesses": true,
     "displaySkhdMode": false,
-    "displayStackIndex": true,
+    "displayStackIndex": false,
     "displayOnlyCurrentStack": true
   },
   "spacesDisplay": {
