@@ -43,3 +43,6 @@ if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/op
 alias neobean="NVIM_APPNAME=linkarzu/dotfiles-latest/neovim/neobean nvim"
 
 # Dotfiles update alias
+
+# Added by Windsurf
+export PATH="/Users/manvirjudge/.codeium/windsurf/bin:$PATH"
