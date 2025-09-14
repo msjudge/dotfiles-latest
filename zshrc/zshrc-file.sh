@@ -46,3 +46,4 @@ alias neobean="NVIM_APPNAME=linkarzu/dotfiles-latest/neovim/neobean nvim"
 
 # Added by Windsurf
 export PATH="/Users/manvirjudge/.codeium/windsurf/bin:$PATH"
+autoload -Uz compinit && compinit
