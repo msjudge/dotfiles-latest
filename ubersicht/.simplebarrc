@@ -72,7 +72,7 @@
     "displayStickyWindowsSeparately": false,
     "hideCreateSpaceButton": false,
     "hideEmptySpaces": false,
-    "showOptionsOnHover": true,
+    "showOptionsOnHover": false,
     "switchSpacesWithoutYabai": false,
     "showOnlyFlashspaceSpaceIndex": false,
     "hideFlashspaceAppIcons": false,
