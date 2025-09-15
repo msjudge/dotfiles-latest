@@ -269,6 +269,52 @@ yabai -m config layout stack
 # the owner dotfiles
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 
+# --- simple-bar-server: fast curl refreshers (persisted in yabairc) ---
+# Remove legacy/duplicate signals (safe if missing)
+yabai -m signal --remove label='simple-bar:server:window_destroyed'  >/dev/null 2>&1
+yabai -m signal --remove label='simple-bar:server:window_focused'    >/dev/null 2>&1
+yabai -m signal --remove label='simple-bar:server:space_changed'     >/dev/null 2>&1
+yabai -m signal --remove label='simple-bar:server:display_changed'   >/dev/null 2>&1
+
+yabai -m signal --remove label='Refresh simple-bar when focused application changes'  >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar when a window is minimized'        >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar when a window is resized'          >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar when an application window is closed' >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar on space change'                   >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar on display focus change'           >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar on space removal'                  >/dev/null 2>&1
+yabai -m signal --remove label='Refresh simple-bar on space creation'                 >/dev/null 2>&1
+
+# Re-create clean curl-based signals (short timeout, no output)
+# Windows
+yabai -m signal --remove sbar-win-focus   >/dev/null 2>&1
+yabai -m signal --remove sbar-win-create  >/dev/null 2>&1
+yabai -m signal --remove sbar-win-destroy >/dev/null 2>&1
+yabai -m signal --remove sbar-win-resize  >/dev/null 2>&1
+yabai -m signal --remove sbar-win-move    >/dev/null 2>&1
+yabai -m signal --remove sbar-win-min     >/dev/null 2>&1
+
+yabai -m signal --add event=window_focused   action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/windows/refresh'   label=sbar-win-focus
+yabai -m signal --add event=window_created   action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/windows/refresh'   label=sbar-win-create
+yabai -m signal --add event=window_destroyed action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/windows/refresh'   label=sbar-win-destroy
+yabai -m signal --add event=window_resized   action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/windows/refresh'   label=sbar-win-resize
+yabai -m signal --add event=window_moved     action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/windows/refresh'   label=sbar-win-move
+yabai -m signal --add event=window_minimized action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/windows/refresh'   label=sbar-win-min
+
+# Spaces
+yabai -m signal --remove sbar-space-change   >/dev/null 2>&1
+yabai -m signal --remove sbar-space-create   >/dev/null 2>&1
+yabai -m signal --remove sbar-space-destroy  >/dev/null 2>&1
+
+yabai -m signal --add event=space_changed    action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/spaces/refresh'    label=sbar-space-change
+# Uncomment if your yabai supports these events reliably
+# yabai -m signal --add event=space_created    action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/spaces/refresh'    label=sbar-space-create
+# yabai -m signal --add event=space_destroyed  action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/spaces/refresh'    label=sbar-space-destroy
+
+# Displays
+yabai -m signal --remove sbar-display-change >/dev/null 2>&1
+yabai -m signal --add event=display_changed  action='curl -fsS -m 0.3 -o /dev/null -X POST http://127.0.0.1:7776/yabai/displays/refresh'  label=sbar-display-change
+
 # Yabai signal to detect focus change for any application and move the cursor
 # yabai -m signal --add event=window_focused action="cliclick m:0,0"
 # yabai -m signal --add event=window_focused app="Google Chrome" action="cliclick m:0,0"
